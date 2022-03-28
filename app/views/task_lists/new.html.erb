@@ -1,0 +1,13 @@
+<div class="content-view">
+  <h1>Create New Task List</h1>
+
+  <%= form_tag(task_lists_path, method: :post) do %>
+    <%= label_tag(:name, "Name:") %>
+    <%= text_field_tag (:name) %>
+    <%= label_tag(:location, "Location:") %>
+    <%= text_field_tag(:location) %>
+    <%= label_tag(:note, "Note:") %>
+    <%= text_field_tag(:note) %>
+    <%= submit_tag("Add task list", class: "btn") %>
+  <% end %>
+</div>

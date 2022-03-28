@@ -1,0 +1,38 @@
+<div class="content-view">
+  <h1>Create New Task</h1>
+
+  <%= form_tag(tasks_path, method: :post) do %>
+    <%= label_tag(:name, "Name:") %>
+    <%= text_field_tag (:name) %>
+    <%= label_tag(:location, "Location:") %>
+    <%= text_field_tag(:location) %>
+    <%= label_tag(:deadline, "Deadline:") %>
+    <%= text_field_tag(:deadline) %>
+    <%= label_tag(:note, "Note:") %>
+    <%= text_field_tag(:note) %>
+    <%= label_tag(:duration, "duration:") %>
+    <div class="row">
+      <div class="col s1">
+        <%= number_field_tag(:hours, 0, min: 0) %>
+      </div>
+      <div class="col s1">
+        <br>
+        hrs
+      </div>
+      <div class="col s1">
+        <%= number_field_tag(:mins, 0, min: 0, max: 59) %>
+      </div>
+      <div class="col s1">
+        <br>
+        mins
+      </div>
+      <div class="col s2">
+        <label for="scheduled_event">
+          <%= check_box_tag("scheduled_event", true, false, class: 'filled-in') %>
+          <span>Scheduled event?</span>
+        </label>
+      </div>
+    </div>
+    <%= submit_tag("Add task", class: "btn") %>
+  <% end %>
+</div>

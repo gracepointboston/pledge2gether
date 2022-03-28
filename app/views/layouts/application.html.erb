@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MaxTime</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+
+    <%= favicon_link_tag '/maxtime_logo.png' %>
+  </head>
+
+  <body>
+    <% if controller_name != "session" %>
+      <div class="row navbar-fixed">
+        <div class="left brand-logo">
+          <%= link_to root_url do %>
+            <%= image_tag("/maxtime_logo.png", class: "brand-logo__image") %>
+            MaxTime
+          <% end %>
+        </div>
+        <div class="right profile dropdown-trigger" data-target='profile__options'>
+          <%= image_tag(@user.profile_img , :class => "left circle profile__img") %>
+          <div class="right profile_info">
+            <span class="profile__name"><%= @user.name %> </span>
+            <br>
+            <span class="profile__email"><%= @user.email %> </span>
+          </div>
+        </div>
+          <ul id='profile__options' class='dropdown-content'>
+            <li class="dropdown__link">
+              <%= link_to session_sign_out_path do%>
+                <%= icon("fas", "sign-out-alt") %> Sign Out
+              <% end %>  
+            </li>
+          </ul>
+      </div>
+      <div class="sidebar">
+        <div class="row">
+          <ul>
+            <li class="sidebar__link">
+              <%= link_to tasks_path do %>
+                <%= icon("fas", "check-square") %> Tasks
+              <% end %>
+            </li>
+            <li class="sidebar__link">
+              <%= link_to task_lists_path do %>
+                <%= icon("fas", "list") %> Task lists  
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main_content">
+        <%= yield %>
+      </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
+
+  </body>
+</html>
+

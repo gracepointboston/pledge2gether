@@ -1,0 +1,332 @@
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /Users/dwu/max_time/config/environment.rb:5)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /Users/dwu/.rbenv/versions/3.0.1/bin/rake:23)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /Users/dwu/max_time/config/environment.rb:5)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /Users/dwu/.rbenv/versions/3.0.1/bin/rake:23)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddTasks (20201222180536)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "deadline" varchar, "note" varchar, "duration" integer, "scheduled_event" boolean, "task_list" varchar DEFAULT '', "completion_date" varchar DEFAULT NULL, "planned_completion_date" varchar DEFAULT NULL, "user_id" varchar DEFAULT '')[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201222180536"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTaskLists (20210105001004)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "task_lists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "note" varchar, "list_of_tasks" varchar, "user_id" varchar DEFAULT '')[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210105001004"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20210111231100)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '', "email" varchar DEFAULT '', "profile_img" varchar DEFAULT '', "admin" boolean DEFAULT 0, "user_id" varchar DEFAULT '')[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210111231100"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-03-21 16:25:46.530623"], ["updated_at", "2022-03-21 16:25:46.530623"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /Users/dwu/max_time/config/environment.rb:5)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from load at /Users/dwu/.rbenv/versions/3.0.1/bin/rake:23)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /Users/dwu/max_time/config/environment.rb:5)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /Users/dwu/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/activerecord-7.0.2.3/lib/active_record/railtie.rb:274)
+Started GET "/" for ::1 at 2022-03-21 12:26:04 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1587)
+  Rendered layout layouts/application.html.erb (Duration: 170.8ms | Allocations: 14301)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 0.3ms | Allocations: 19878)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: font-awesome-sprockets.
+        on line 28:1 of app/assets/stylesheets/application.scss
+>> @import "font-awesome-sprockets";
+
+   ^
+):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    "application", media: "all" %>
+     9:     <%= javascript_include_tag "application" %>
+    10: 
+    11:     <%= favicon_link_tag '/maxtime_logo.png' %>
+  
+app/assets/stylesheets/application.scss:28
+app/views/layouts/application.html.erb:8
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /Users/dwu/max_time/config/environment.rb:5)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /Users/dwu/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/activerecord-7.0.2.3/lib/active_record/railtie.rb:274)
+Started GET "/" for ::1 at 2022-03-21 12:27:37 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1587)
+  Rendered layout layouts/application.html.erb (Duration: 159.0ms | Allocations: 13817)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 0.3ms | Allocations: 19398)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: font-awesome-sprockets.
+        on line 28:1 of app/assets/stylesheets/application.scss
+>> @import "font-awesome-sprockets";
+
+   ^
+):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    "application", media: "all" %>
+     9:     <%= javascript_include_tag "application" %>
+    10: 
+    11:     <%= favicon_link_tag '/maxtime_logo.png' %>
+  
+app/assets/stylesheets/application.scss:28
+app/views/layouts/application.html.erb:8
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /Users/dwu/max_time/config/environment.rb:5)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /Users/dwu/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/activerecord-7.0.2.3/lib/active_record/railtie.rb:274)
+Started GET "/" for ::1 at 2022-03-21 12:29:39 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1587)
+  Rendered layout layouts/application.html.erb (Duration: 158.2ms | Allocations: 13817)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 0.4ms | Allocations: 19394)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: font-awesome-sprockets.
+        on line 28:1 of app/assets/stylesheets/application.scss
+>> @import "font-awesome-sprockets";
+
+   ^
+):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    "application", media: "all" %>
+     9:     <%= javascript_include_tag "application" %>
+    10: 
+    11:     <%= favicon_link_tag '/maxtime_logo.png' %>
+  
+app/assets/stylesheets/application.scss:28
+app/views/layouts/application.html.erb:8
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /Users/dwu/max_time/config/environment.rb:5)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /Users/dwu/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/activerecord-7.0.2.3/lib/active_record/railtie.rb:274)
+Started GET "/" for ::1 at 2022-03-21 12:31:29 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1587)
+  Rendered layout layouts/application.html.erb (Duration: 5178.0ms | Allocations: 259737)
+Completed 200 OK in 5191ms (Views: 5181.1ms | ActiveRecord: 0.3ms | Allocations: 265373)
+
+
+Started POST "/google_sign_in/authorization" for ::1 at 2022-03-21 12:31:36 -0400
+Processing by GoogleSignIn::AuthorizationsController#create as HTML
+  Parameters: {"authenticity_token"=>"MpnsQHbnmTJ0OlF5Z8bexXTxjjBATpQiZe5znpfy7d1Tlqp7ACZyBzymCB118xq3WEeyJa/ZXPKq/JozTYqwRg==", "proceed_to"=>"/session/create"}
+Redirected to https://accounts.google.com/o/oauth2/auth?client_id=456054188672-jrtpcsttjrfjaj163n1sv1069mjd6l9p.apps.googleusercontent.com&prompt=login&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fgoogle_sign_in%2Fcallback&response_type=code&scope=openid+profile+email&state=cAzmRFxQrD83Epstp4Irp0a0KqNm7rpA
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 1205)
+
+
+Started GET "/google_sign_in/callback?state=cAzmRFxQrD83Epstp4Irp0a0KqNm7rpA&code=[FILTERED]&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for ::1 at 2022-03-21 12:31:39 -0400
+Processing by GoogleSignIn::CallbacksController#show as HTML
+  Parameters: {"state"=>"cAzmRFxQrD83Epstp4Irp0a0KqNm7rpA", "code"=>"[FILTERED]", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+Redirected to http://localhost:3000/session/create
+Completed 302 Found in 1266ms (ActiveRecord: 0.0ms | Allocations: 3450)
+
+
+Started GET "/session/create" for ::1 at 2022-03-21 12:31:40 -0400
+Processing by SessionController#create as HTML
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_id" = ? LIMIT ?[0m  [["user_id", "113264017408530903896"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/session_controller.rb:19:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "profile_img", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Daniel Wu"], ["email", "ldanielcwu@gmail.com"], ["profile_img", "https://lh3.googleusercontent.com/a-/AOh14GgenyBvtNA658pR3vWzSwdlZis66sivhonkvVbsoA=s96-c"], ["user_id", "113264017408530903896"]]
+  ↳ app/controllers/session_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/session_controller.rb:19:in `create'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 1134ms (ActiveRecord: 2.8ms | Allocations: 9073)
+
+
+Started GET "/tasks" for ::1 at 2022-03-21 12:31:42 -0400
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_id" = ? LIMIT ?[0m  [["user_id", "113264017408530903896"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."completion_date" IS NULL AND "tasks"."user_id" = ?[0m  [["user_id", "113264017408530903896"]]
+  ↳ app/views/tasks/index.html.erb:25
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1507)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 11676)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.5ms | Allocations: 14393)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constant GoogleSignIn::ButtonHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload GoogleSignIn::ButtonHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+This autoloaded constant has been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <top (required)> at /Users/dwu/max_time/config/environment.rb:5)
+Started GET "/" for ::1 at 2022-03-21 17:30:33 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionController#login as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering session/login.html.erb within layouts/application
+  Rendered session/login.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1567)
+  Rendered layout layouts/application.html.erb (Duration: 3348.4ms | Allocations: 257239)
+Completed 200 OK in 3362ms (Views: 3351.6ms | ActiveRecord: 0.8ms | Allocations: 262241)
+
+
+Started GET "/fonts/font-awesome/fa-brands-400.woff2" for ::1 at 2022-03-21 17:30:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/font-awesome/fa-brands-400.woff2"):
+  
+Started GET "/fonts/font-awesome/fa-brands-400.woff" for ::1 at 2022-03-21 17:30:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/font-awesome/fa-brands-400.woff"):
+  
+Started GET "/fonts/font-awesome/fa-brands-400.ttf" for ::1 at 2022-03-21 17:30:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/font-awesome/fa-brands-400.ttf"):
+  
+Started POST "/google_sign_in/authorization" for ::1 at 2022-03-21 17:30:38 -0400
+Processing by GoogleSignIn::AuthorizationsController#create as HTML
+  Parameters: {"authenticity_token"=>"KrsPZqUeHwzHENgYwIzI4v3wN7f+O2gA6budgYHbSeZ3GteWF8mTB2S1jerOd47G+o8GOo0bYyaHvO+m1mQqmg==", "proceed_to"=>"/session/create"}
+Redirected to https://accounts.google.com/o/oauth2/auth?client_id=456054188672-jrtpcsttjrfjaj163n1sv1069mjd6l9p.apps.googleusercontent.com&prompt=login&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fgoogle_sign_in%2Fcallback&response_type=code&scope=openid+profile+email&state=eDAAMcXmynUkAWjfhR4DcFXJBTLQQ6Ev
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 1311)
+
+
+Started GET "/google_sign_in/callback?state=eDAAMcXmynUkAWjfhR4DcFXJBTLQQ6Ev&code=[FILTERED]&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for ::1 at 2022-03-21 17:30:41 -0400
+Processing by GoogleSignIn::CallbacksController#show as HTML
+  Parameters: {"state"=>"eDAAMcXmynUkAWjfhR4DcFXJBTLQQ6Ev", "code"=>"[FILTERED]", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+Redirected to http://localhost:3000/session/create
+Completed 302 Found in 1305ms (ActiveRecord: 0.0ms | Allocations: 3126)
+
+
+Started GET "/session/create" for ::1 at 2022-03-21 17:30:42 -0400
+Processing by SessionController#create as HTML
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_id" = ? LIMIT ?[0m  [["user_id", "113264017408530903896"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:13:in `create'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 1290ms (ActiveRecord: 0.2ms | Allocations: 2869)
+
+
+Started GET "/tasks" for ::1 at 2022-03-21 17:30:44 -0400
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_id" = ? LIMIT ?[0m  [["user_id", "113264017408530903896"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."completion_date" IS NULL AND "tasks"."user_id" = ?[0m  [["user_id", "113264017408530903896"]]
+  ↳ app/views/tasks/index.html.erb:25
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1475)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 10509)
+Completed 200 OK in 25ms (Views: 14.4ms | ActiveRecord: 1.3ms | Allocations: 16401)
+
+
+Started GET "/fonts/font-awesome/fa-solid-900.woff2" for ::1 at 2022-03-21 17:30:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/font-awesome/fa-solid-900.woff2"):
+  
+Started GET "/fonts/font-awesome/fa-solid-900.woff" for ::1 at 2022-03-21 17:30:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/font-awesome/fa-solid-900.woff"):
+  
+Started GET "/fonts/font-awesome/fa-solid-900.ttf" for ::1 at 2022-03-21 17:30:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/font-awesome/fa-solid-900.ttf"):
+  

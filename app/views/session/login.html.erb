@@ -1,0 +1,22 @@
+<div class="login-background">
+  <div class="login__container center">
+    <%= image_tag("/login_header.png", class: "login__container-header") %>
+
+    <div class="login__container-contents">
+      <% if flash[:alert] %>
+        <div class="alert"><%= flash[:alert] %></div>
+      <% end %>
+
+      <h4>🎉 Welcome to Maxtime! 🎉</h4>
+      <h5><i>Log in to start streamlining your life!</i> ⏱</h5>
+      <br>
+      <br>
+      <%= google_sign_in_button proceed_to: session_create_path, class: "btn-large red" do %>
+        <div class="left google__logo"> <%= icon("fab", "google") %> </div>
+        <div class="right google__text"> Sign in with Google </div>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

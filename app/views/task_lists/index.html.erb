@@ -1,0 +1,40 @@
+<div class="content-view">
+  <div class="fixed-action-btn">
+    <%= button_to "+", new_task_lists_path, method: :get, class: "btn-floating btn-large red"%>
+  </div>
+
+  <% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+  <% end %>
+  <h1>Task Lists</h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Note</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @task_lists.each do |t| %>
+      <tr>
+        <td> <%= t.name %> </td>
+        <td> <%= t.location %> </td>
+        <td> <%= t.note %> </td>
+        <td> <%= link_to "View Tasks", show_task_lists_path(task_list_id: t.id), class: "btn" %> </td>
+        <td>
+          <%= button_to edit_task_lists_path, class: "btn", method: :get, params: { task_list_id: t.id } do %>
+            <%= icon("fas", "edit") %>
+          <% end %>
+        </td>
+        <td> 
+          <%= button_to task_lists_path, class: "btn", method: :delete, params: { task_list_id: t.id } do %>
+            <% icon("fas", "trash") %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

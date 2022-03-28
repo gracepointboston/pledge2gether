@@ -1,0 +1,57 @@
+<div class="content-view">
+  <div class="fixed-action-btn">
+    <%= button_to '+', new_tasks_path, method: :get, class: "btn-floating btn-large red" %>
+  </div>
+
+  <% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+  <% end %>
+  <%= link_to("#{@show_completed ? "Hide" : "Show"} completed tasks", tasks_path(show_completed: !@show_completed), class: "right btn") %>
+  <h1>All Tasks</h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Deadline</th>
+      <th>Note</th>
+      <th>Duration</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @tasks.each do |t| %>
+      <tr>
+        <td> <%= t.name %> </td>
+        <td> <%= t.location %> </td>
+        <td> <%= t.deadline %> </td>
+        <td> <%= t.note %> </td>
+        <td>
+          <% if t.duration >= 60 %>
+            <%= t.duration.div(60) %> <%= (t.duration.div(60) > 1) ? "hrs" : "hr" %>
+          <% end %>
+          <%= t.duration % 60 %> <%= (t.duration % 60 > 1) ? "mins" : "min" %>
+        </td>
+        <td>
+          <% if t.scheduled_event %>
+            Scheduled Event
+          <% end %>
+        </td>
+        <td> <%= t.completion_date ? ("Completed: #{t.completion_date}") : (button_to "Mark as complete", complete_tasks_path(id: t.id), class: "btn") %> </td>
+        <td>
+          <%= button_to edit_tasks_path, class: "btn", method: :get, params: { id: t.id } do %>
+            <%= icon("fas", "edit") %>
+          <% end %>
+        </td>
+        <td> 
+        <%= button_to tasks_path, class: "btn", method: :delete, params: { id: t.id } do %>
+            <% icon("fas", "trash") %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>

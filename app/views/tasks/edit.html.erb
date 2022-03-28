@@ -1,0 +1,41 @@
+<div class="content-view">
+  <h1>Modify Task</h1>
+
+  <%= form_tag(tasks_path, method: :put) do %>
+    <%= hidden_field_tag 'id', @task.id %>
+    <%= label_tag(:name, "Name:") %>
+    <%= text_field_tag (:name), @task.name %>
+    <%= label_tag(:location, "Location:") %>
+    <%= text_field_tag (:location), @task.location %>
+    <%= label_tag(:deadline, "Deadline:") %>
+    <%= text_field_tag (:deadline), @task.deadline %>
+    <%= label_tag(:note, "Note:") %>
+    <%= text_field_tag (:note), @task.note %>
+    <%= label_tag(:duration, "Duration:") %>
+    <div class="row">
+      <div class="col s1">
+        <%= number_field_tag(:hours, @task.duration.div(60), min: 0) %>
+      </div>
+      <div class="col s1">
+        <br>
+        hrs
+      </div>
+      <div class="col s1">
+        <%= number_field_tag(:mins, @task.duration % 60, min: 0, max: 59) %>
+      </div>
+      <div class="col s1">
+        <br>
+        mins
+      </div>
+      <label for="scheduled_event">
+        <%= check_box_tag("scheduled_event", true, @task.scheduled_event, class: 'filled-in inline') %>
+        <span>Scheduled event?</span>
+      </label>
+    </div>
+    <%= label_tag(:planned_completion_date, "Planned completion date:") %>
+    <%= text_field_tag (:planned_completion_date), @task.planned_completion_date %>
+    <%= label_tag(:completion_date, "Completion date:") %>
+    <%= text_field_tag (:completion_date), @task.completion_date %>
+    <%= submit_tag("Update", class: "btn") %>
+  <% end %>
+</div>
