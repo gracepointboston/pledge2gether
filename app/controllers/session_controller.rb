@@ -3,7 +3,7 @@ class SessionController < ApplicationController
 
   def login
     if current_user
-      redirect_to tasks_path
+      redirect_to dashboard_path
     end
   end
 
@@ -20,7 +20,7 @@ class SessionController < ApplicationController
       end
 
       session[:user_id] = user_params.user_id
-      redirect_to tasks_path
+      redirect_to dashboard_path
     else
       redirect_to session_path, alert: 'Login failed'
     end
