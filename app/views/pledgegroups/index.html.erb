@@ -1,0 +1,39 @@
+<div class="pledge-groups-container">
+    <h3>Pledge Groups</h3>
+
+    <%= button_to "New Pledge Group", new_pledgegroup_path, :method => "get" %>
+
+    <div class="pledge-group-list">  
+     <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>admins</th>
+                <th>public</th>
+                <th>pledges</th>
+                <th>budget</th>
+                <th>amount paid</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @pledgegroups.each do |pledgegroup| %>
+            <tr>
+                <td><%= pledgegroup.id %></td>
+                
+                <td>
+                    <%= pledgegroup.admins.each do |user| %>
+                        <p><%= user.name %></p>
+                    <% end %>
+                </td>
+
+                <td><%= pledgegroup.is_public %></td>
+                <td><%= pledgegroup.pledges %></td>
+                <td><%= pledgegroup.budget %></td>
+                <td><%= pledgegroup.amount_paid %></td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+</div>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#index'
 
+  resources :pledgegroups
+
   get 'session', to: 'session#login'
   get 'session/create', to: 'session#create'
   get 'session/sign_out', to: 'session#sign_out'
