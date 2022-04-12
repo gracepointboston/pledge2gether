@@ -1,9 +1,8 @@
 <div class="pledge-group-form">
     <h3>New Pledge Group</h3>
+   
+    <%= form_with model: @pledgegroup do |form| %>
     
-   <%= form_with model: @pledgegroup do |form| %>
-
-
     <p>
       <label>
         <input type="checkbox" class="filled-in" name="is_public" id="is_public" value="true"/>

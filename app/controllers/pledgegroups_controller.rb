@@ -7,40 +7,14 @@ class PledgegroupsController < ApplicationController
     @pledgegroup = Pledgegroup.new
   end
 
-  
   def create
-    @pledgegroup = Pledgegroup.new(pledgegroup_params)
+    @pledgegroup = Pledgegroup.new({ budget: params[:pledgegroup][:budget], admins: [current_user], is_public: (params[:is_public] ? true : false)})
 
     if @pledgegroup.save
       redirect_to pledgegroups_url
     else
-      render :new, status: :unprocessable_entity
+      flash[:error] = "Pledge group could not be saved with the given input"
+      redirect_back fallback_location: new_pledgegroup_path
     end
   end
-
-
-
-
-  # Get new pledgegroup parameters from form
-  private
-    def pledgegroup_params
-      @user ||= get_curr_user
-
-      par = params.require(:pledgegroup).permit(:budget)
-      par[:admins] = [@user]
-
-      # if checkbox checked, make is_public true
-      if params[:is_public]
-        par[:is_public] = true
-      end
-
-      par
-    end
-
-    # Get current User
-    private
-    def get_curr_user
-      user ||= User.find_by(user_id: session[:user_id])
-    end
-
 end
