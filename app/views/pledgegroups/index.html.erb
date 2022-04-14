@@ -28,6 +28,7 @@
                 <td><%= pledgegroup.is_public %></td>
                 <td><%= pledgegroup.budget %></td>
                 <td><%= pledgegroup.amount_paid %></td>
+                <td><%= link_to "edit", edit_pledgegroup_path(pledgegroup), :method => "get" %></td>
             </tr>
             <% end %>
         </tbody>
