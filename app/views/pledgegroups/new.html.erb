@@ -1,0 +1,26 @@
+<div class="pledge-group-form">
+    <h3>New Pledge Group</h3>
+   
+    <%= form_with model: @pledgegroup do |form| %>
+    
+    <p>
+      <label>
+        <input type="checkbox" class="filled-in" name="is_public" id="is_public" value="true"/>
+        <span>Public</span>
+      </label>
+    </p>
+
+  <div>
+    <%= form.label :budget %><br>
+    <%= form.text_field :budget %>
+    <% @pledgegroup.errors.full_messages_for(:budget).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+</div>
